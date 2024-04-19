@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квіти</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 1s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+        }
+
+        .cart {
+            position: relative;
+        }
+
+        .cart-items {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #FF5733;
+            color: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: fadeIn 1s ease;
+        }
+
+        .search-bar {
+            margin-top: 20px;
+            animation: slideIn 0.5s ease;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 200px;
+        }
+
+        .search-bar button {
+            padding: 8px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+        }
+
+        .hero h2 {
+            color: #333;
+        }
+
+        .hero p {
+            color: #666;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .collections {
+            margin-bottom: 40px;
+        }
+
+        .collections h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .collection {
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .collection img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .collection h3 {
+            color: #333;
+        }
+
+        .collection p {
+            color: #666;
+        }
+
+        .products {
+            margin-bottom: 40px;
+        }
+
+        .products h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product-list li {
+            margin: 0 20px 20px 20px;
+            text-align: center;
+            flex: 1 1 300px; 
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+        }
+
+        .product-list li img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about {
+            text-align: center;
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+        }
+
+        .about p {
+            color: #666;
+        }
+
+        .testimonials {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonials h2 {
+            color: #333;
+        }
+
+        .testimonial p {
+            color: #666;
+        }
+
+        .instagram {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .instagram h2 {
+            color: #333;
+        }
+
+        .instagram-feed {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .instagram-feed img {
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #ccc;
+        }
+
+        @media only screen and (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .hero img {
+                margin-bottom: 10px;
+            }
+
+            .collections, .products, .about, .testimonials, .instagram {
+                margin-bottom: 20px;
+            }
+
+            footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Квітковий магазин</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Декор та подарунки</a></li>
+                <li><a href="#">Все для весілля</a></li>
+                <li><a href="#">День закоханих</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <span class="cart-items">0</span>
+            <img src="https://i.pinimg.com/564x/38/3e/24/383e24aec5f5ce247f20a9f353f18b43.jpg" alt="Корзина" class="cart-icon" style="width: 30px;">
+        </div>
+        <form class="search-bar">
+            <input type="text" placeholder="Пошук квітів">
+            <button type="submit">Знайти</button>
+        </form>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="https://i.pinimg.com/564x/c0/48/67/c04867692996f336ef004672660bd425.jpg" alt="Букет із троянд та тюльпанів">
+            <h2>Симфонія почуттів</h2>
+            <p>Гармонія кольорів та ароматів у букеті із троянд та тюльпанів, доповненому іншими квітами, - відмінний вибір для неповторної людини.</p>
+            <a href="#" class="btn">Переглянути</a>
+        </section>
+
+        <section class="collections">
+            <h2>Колекції</h2>
+            <article class="collection">
+                <img src="https://i.pinimg.com/564x/f1/32/9d/f1329d7f962a010bca41b46a02ff466f.jpg" alt="Колекція квітів">
+                <h3>Рожевий романтизм</h3>
+                <p>Розкішні рожеві букети для особливих випадків.</p>
+                <a href="#" class="btn">Переглянути</a>
+            </article>
+            <article class="collection">
+                <img src="https://i.pinimg.com/564x/a8/e4/25/a8e425b88226a9ec96fbb93fb4330f12.jpg" alt="Колекція квітів">
+                <h3>Барвисті мрії</h3>
+                <p>Яскраві і кольорові букети для радісних подій.</p>
+                <a href="#" class="btn">Переглянути</a>
+            </article>
+            <article class="collection">
+                <img src="https://i.pinimg.com/564x/1d/c5/2c/1dc52c67aa646e3d80e9378b60b7b555.jpg" alt="Колекція квітів">
+                <h3>Фіалкова ніжність</h3>
+                <p>Легкі та повітряні букети для романтичних вечорів.</p>
+                <a href="#" class="btn">Переглянути</a>
+            </article>
+        </section>
+
+        <section class="products">
+            <h2>Все для весілля</h2>
+            <ul class="product-list">
+                <li>
+                    <img src="https://i.pinimg.com/564x/62/75/7b/62757b1e9a7cdcde9c9a1ac589d7a342.jpg" alt="Букет троянд">
+                    <h3>Букет із троянд</h3>
+                    <p>500 грн</p>
+                    <a href="#" class="btn add-to-cart">У кошик</a>
+                </li>
+                <li>
+                    <img src="https://i.pinimg.com/564x/4f/22/04/4f2204d1791fc08f537e01e6a63d939d.jpg" alt="Букет тюльпанів">
+                    <h3>Букет тюльпанів</h3>
+                    <p>300 грн</p>
+                    <a href="#" class="btn add-to-cart">У кошик</a>
+                </li>
+                <li>
+                    <img src="https://i.pinimg.com/564x/45/cd/8b/45cd8b9041332917cfef4cad11eebc01.jpg" alt="Букет орхідей">
+                    <h3>Букет орхідей</h3>
+                    <p>700 грн</p>
+                    <a href="#" class="btn add-to-cart">У кошик</a>
+                </li>
+                <li>
+                    <img src="https://i.pinimg.com/564x/82/c2/b6/82c2b67c857418ebe12af49882b6c460.jpg" alt="Букет півоній">
+                    <h3>Букет півоній</h3>
+                    <p>450 грн</p>
+                    <a href="#" class="btn add-to-cart">У кошик</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="about">
+            <h2>Про нас</h2>
+            <p>Палітра кольорів - це не просто красиві квіти. Це емоції, почуття та щирість. Ми залюбки підберемо для вас найкращі квіти, щоб створити неповторний букет, який подарує емоції вашим близьким.</p>
+            <p>Ми прагнемо зробити ваші спеціальні моменти незабутніми. Наші квіти принесуть радість та враження, які запам'ятаються надовго.</p>
+            <p>Крім того, ми горді нашою екологічною ініціативою. Всі наші букети виготовлені з натуральних матеріалів, а доставка здійснюється екологічною поштою.</p>
+        </section>
+
+        <section class="testimonials">
+            <h2>Відгуки клієнтів</h2>
+            <div class="testimonial">
+                <p>"Дуже задоволена своїм букетом. Квіти свіжі та красиві!"</p>
+                <p>- Олена, м. Київ</p>
+            </div>
+            <div class="testimonial">
+                <p>"Прекрасний вибір квітів. Дякую за чудове обслуговування!"</p>
+                <p>- Андрій, м. Львів</p>
+            </div>
+        </section>
+
+        <section class="instagram">
+            <h2>Наш Instagram</h2>
+            <div class="instagram-feed">
+                <img src="https://i.pinimg.com/564x/a7/45/c2/a745c2f9bcdcbba3e71db0a5bbf857e6.jpg" alt="Instagram фото">
+                <img src="https://i.pinimg.com/736x/d9/6d/7c/d96d7c6e332d711c13acb67193b7380a.jpg" alt="Instagram фото">
+                <img src="https://i.pinimg.com/564x/44/e0/f8/44e0f8b5979add3bcd3f661b7fd08610.jpg" alt="Instagram фото">
+                <img src="https://i.pinimg.com/564x/d9/be/20/d9be20b0f3dd435be7c3378555f706df.jpg" alt="Instagram фото">
+                <img src="https://i.pinimg.com/564x/e8/8f/72/e88f721232af6b6046da4790a91d01d6.jpg" alt="Instagram фото">
+                <img src="https://i.pinimg.com/564x/b8/6e/7f/b86e7f81fcea549bc41585f2b4f7338a.jpg" alt="Instagram фото">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Квіти</p>
+        <ul class="social-media">
+            <li><a href="ссылка_на_Facebook">Facebook</a></li>
+            <li><a href="ссылка_на_Instagram">Instagram</a></li>
+        </ul>
+        <p>Контактний телефон: +380 XX XXX XX XX</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartItems = document.querySelector('.cart-items');
+
+            let itemCount = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    itemCount++;
+                    cartItems.textContent = itemCount;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
