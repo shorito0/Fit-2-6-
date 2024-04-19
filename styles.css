@@ -6,12 +6,30 @@ body {
     color: #333;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 header {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
     animation: fadeIn 1s ease;
 }
@@ -20,15 +38,24 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin-top: 10px;
-    display: flex;
 }
 
 nav ul li {
+    display: inline;
     margin-right: 20px;
 }
 
-.cart {
-    position: relative;
+nav ul li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+.cart, .search-bar {
     display: flex;
     align-items: center;
 }
@@ -72,34 +99,165 @@ nav ul li {
     background-color: #45a049;
 }
 
-.main-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-    padding: 20px;
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.hero img,
-.collection img,
-.product-list li img,
-.instagram-feed img {
+.hero img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease;
 }
 
-.collection,
-.product-list li {
+.hero h2 {
+    color: #333;
+}
+
+.hero p {
+    color: #666;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.collections {
+    margin-bottom: 40px;
+}
+
+.collections h2 {
+    text-align: center;
+    color: #333;
+}
+
+.collection {
+    margin-bottom: 20px;
+    text-align: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.footer-container {
+.collection img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.collection h3 {
+    color: #333;
+}
+
+.collection p {
+    color: #666;
+}
+
+.products {
+    margin-bottom: 40px;
+}
+
+.products h2 {
+    text-align: center;
+    color: #333;
+}
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-list li {
+    margin: 0 20px 20px 20px;
+    text-align: center;
+    flex: 1 1 300px; 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+.product-list li img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+.about p {
+    color: #666;
+}
+
+.testimonials {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.testimonials h2 {
+    color: #333;
+}
+
+.testimonial p {
+    color: #666;
+}
+
+.instagram {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.instagram h2 {
+    color: #333;
+}
+
+.instagram-feed {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.instagram-feed img {
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+footer {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -107,28 +265,27 @@ nav ul li {
     margin-top: 40px;
 }
 
-.footer-container p {
+footer p {
     margin: 5px 0;
 }
 
-.footer-container ul {
+footer ul {
     list-style-type: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
 }
 
-.footer-container ul li {
+footer ul li {
+    display: inline;
     margin-right: 10px;
 }
 
-.footer-container ul li a {
+footer ul li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-container ul li a:hover {
+footer ul li a:hover {
     color: #ccc;
 }
 
@@ -137,11 +294,8 @@ nav ul li {
         padding: 10px;
     }
 
-    nav ul {
-        flex-direction: column;
-    }
-
     nav ul li {
+        display: block;
         margin-bottom: 10px;
     }
 
@@ -149,16 +303,11 @@ nav ul li {
         margin-bottom: 10px;
     }
 
-    .collection,
-    .product-list li {
-        margin: 0 0 20px 0;
+    .collections, .products, .about, .testimonials, .instagram {
+        margin-bottom: 20px;
     }
 
-    .main-container {
-        padding: 10px;
-    }
-
-    .footer-container {
+    footer {
         padding: 10px;
     }
 }
